@@ -1,0 +1,25 @@
+jQuery(function(){
+	var stack = {
+		delay: 5000,
+		actions:[],
+		run: function() {
+			if (stack.actions.length) {
+				stack.actions.shift()();
+		    setTimeout(stack.run, stack.delay);
+		  }
+		}
+	};
+
+	$("#slideshow li").each(function(index){
+		var that = this;
+		stack.actions.push(function(){
+			if (index-1 != -1){
+				$($("#slideshow li")[index-1]).hide();
+			}
+			$(this).show("slide", { direction: "left" }, 1000);
+		});
+	});
+	
+	$($("#slideshow li")[0]).show();
+	stack.run();
+});

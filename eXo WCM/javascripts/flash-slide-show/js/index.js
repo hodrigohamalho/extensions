@@ -20,7 +20,7 @@ jQuery(function(){
 		$("#slideshow li").each(function(index){ // itera sobre os itens
 			var that = this;
 			stack.actions.push(function(){ // empilha essas acoes
-				$(that).show();	// Mostra o flash atual
+				$(that).animate({ "height": "toggle", "opacity": "toggle"}, "slow" );	// Mostra o flash atual
 				$($("#slideshow li")[index-1]).hide("slow"); // Esconde o flash anterior
 			});
 		});

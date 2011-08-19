@@ -1,27 +1,31 @@
 jQuery(function(){
+	// Cria uma pilha para permitir que seja possivel uma pausa entre a exibicao dos flahs
 	var stack = {
 		delay: 5000,
 		actions:[],
 		run: function() {
-			if (stack.actions.length) {
-				stack.actions.shift()();
-		    setTimeout(stack.run, stack.delay);
-		  }
+			if (stack.actions.length) { // Verifica se existe elemento na pilha
+				stack.actions.shift()(); // Desempilha
+		    	setTimeout(stack.run, stack.delay); // Semelhante ao sleep do java.
+		  	}else{ // Quando a pilha ficar vazia recomece o ciclo.
+		  		$($("#slideshow li")).hide();
+			  	showElements();
+			  	stack.run();
+			}
+		  	
 		}
 	};
 
-	$("#slideshow li").each(function(index){
-		var that = this;
-		stack.actions.push(function(){
-			$(that).show("slide", { direction: "left" }, 500);
-			
-			if (index-1 != -1){
-				$($("#slideshow li")[index-1]).hide("slide", { direction: "left" }, 500);
-			}
-		//	$(that).show("slow");
+	function showElements(){
+		$("#slideshow li").each(function(index){ // itera sobre os itens
+			var that = this;
+			stack.actions.push(function(){ // empilha essas acoes
+				$(that).animate({ "height": "toggle", "opacity": "toggle", left: 10}, "slow" );	// Mostra o flash atual
+				$($("#slideshow li")[index-1]).hide("slow"); // Esconde o flash anterior
+			});
 		});
-	});
-	
-	$($("#slideshow li")[0]).show();
+	}
+
+	showElements();
 	stack.run();
 });

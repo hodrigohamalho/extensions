@@ -2,6 +2,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
@@ -9,18 +10,18 @@
 <div id="lista_flash">
 	<ul id="slideshow">
 		<li class="hide">
-				<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-44455359600" width="195" height="96" id="movie_name" align="middle">
-					<param name="movie" value="flash/pde2019.swf"/>
-					<!--[if !IE]>-->
-					<object type="application/x-shockwave-flash" data="flash/pde2019.swf" width="195" height="96">
-							<param name="movie" value="pde2019.swf"/>
-					<!--<![endif]-->
-							<a href="http://www.adobe.com/go/getflash">
-									<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
-							</a>
-					<!--[if !IE]>-->
-					</object>
-					<!--<![endif]-->
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-44455359600" width="195" height="96" id="	movie_name" align="middle">
+				<param name="movie" value="flash/pde2019.swf"/>
+				<!--[if !IE]>-->
+				<object type="application/x-shockwave-flash" data="flash/pde2019.swf" width="195" height="96">
+						<param name="movie" value="pde2019.swf"/>
+				<!--<![endif]-->
+						<a href="http://www.adobe.com/go/getflash">
+								<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
+						</a>
+				<!--[if !IE]>-->
+				</object>
+				<!--<![endif]-->
 			</object>
 		</li>
 	
@@ -73,5 +74,16 @@
 		</li>	
 	</ul>
 </div>
+
+<div>
+
+</div>
+
+<div class="clear">
+</div>
+
+<div id="black">
+</div>
+
 </body>
 </html>
